@@ -1,0 +1,5 @@
+/.antlr
+/__pycache__
+/compiladores
+antlr-4.13.2-complete.jar
+fortallLexer.interp

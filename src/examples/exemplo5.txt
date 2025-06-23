@@ -1,0 +1,61 @@
+programa jogo;
+
+int numeroSecreto = 7;
+int tentativas = 0;
+int maxTentativas = 3;
+
+retorna bool funcao verificarPalpite(int palpite) {
+    tentativas = tentativas + 1;
+    
+    se (palpite == numeroSecreto) {
+        escreva("🎉 Parabéns! Você acertou!");
+        retorna true;
+    } senao {
+        se (palpite < numeroSecreto) {
+            escreva("📈 Muito baixo! Tente um número maior.");
+        } senao {
+            escreva("📉 Muito alto! Tente um número menor.");
+        }
+        retorna false;
+    }
+}
+
+retorna nada funcao jogar() {
+    escreva("=== JOGO DE ADIVINHAÇÃO ===");
+    escreva("Tente adivinhar o número secreto entre 1 e 10!");
+    escreva("Você tem", maxTentativas, "tentativas.");
+    escreva("");
+    
+    int atual = 1;
+    
+    enquanto (atual <= maxTentativas) {
+        escreva("Tentativa", atual, "de", maxTentativas);
+        escreva("Digite seu palpite:");
+        
+        int palpite;
+        leia(palpite);
+        
+        bool acertou = verificarPalpite(palpite);
+        
+        se (acertou) {
+            escreva("🏆 Você ganhou em", tentativas, "tentativas!");
+            retorna;
+        }
+        
+        atual = atual + 1;
+        
+        se (atual <= maxTentativas) {
+            escreva("Tente novamente!");
+            escreva("");
+        }
+    }
+    
+    escreva("😔 Suas tentativas acabaram!");
+    escreva("O número secreto era:", numeroSecreto);
+}
+
+retorna nada funcao principal() {
+    jogar();
+    escreva("");
+    escreva("👋 Obrigado por jogar!");
+}

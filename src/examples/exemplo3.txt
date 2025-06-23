@@ -1,0 +1,23 @@
+programa fibonacci;
+
+retorna int funcao fib(int n) {
+    se (n <= 1) {
+        retorna n;
+    } senao {
+        int a = fib(n - 1);
+        int b = fib(n - 2);
+        retorna a + b;
+    }
+}
+
+retorna nada funcao principal() {
+    int limite = 6;
+    escreva("Sequência de Fibonacci até", limite, ":");
+    
+    int i = 0;
+    enquanto (i <= limite) {
+        int valor = fib(i);
+        escreva("F(", i, ") =", valor);
+        i = i + 1;
+    }
+}

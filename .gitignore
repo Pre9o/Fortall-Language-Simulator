@@ -3,3 +3,5 @@
 /compiladores
 antlr-4.13.2-complete.jar
 fortallLexer.interp
+/src/__pycache__
+/antlr/.antlr

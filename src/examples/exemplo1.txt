@@ -1,0 +1,18 @@
+programa exemplo1;
+
+int x = 10;
+int y = 5;
+
+retorna nada funcao principal() {
+    int resultado = x + y;
+    escreva("Soma de", x, "e", y, "é:", resultado);
+    
+    int produto = x * y;
+    escreva("Produto é:", produto);
+    
+    se (x > y) {
+        escreva("x é maior que y");
+    } senao {
+        escreva("y é maior ou igual a x");
+    }
+}

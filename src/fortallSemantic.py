@@ -152,11 +152,11 @@ class SemanticAnalyzer(fortallVisitor):
         self.symbol_table[var_name]['initialized'] = True
     
     def visitComandoSe(self, ctx: fortallParser.ComandoSeContext):
-        """Comando se - condição deve ser do tipo inteiro"""
+        """Comando se - condição deve ser do tipo inteiro ou booleano"""
         condition_type = self.visit(ctx.expressao())
         
-        if condition_type != 'int':
-            self.add_error("Condição do 'se' deve ser do tipo inteiro", ctx)
+        if condition_type not in ['int', 'bool']:
+            self.add_error("Condição do 'se' deve ser do tipo inteiro ou booleano", ctx)
         
         self.visit(ctx.comando(0))
         if len(ctx.comando()) > 1:  # tem senao
@@ -164,11 +164,11 @@ class SemanticAnalyzer(fortallVisitor):
 
     
     def visitComandoEnquanto(self, ctx: fortallParser.ComandoEnquantoContext):
-        """Comando enquanto - condição deve ser do tipo inteiro"""
+        """Comando enquanto - condição deve ser do tipo inteiro ou booleano"""
         condition_type = self.visit(ctx.expressao())
         
-        if condition_type != 'int':
-            self.add_error("Condição do 'enquanto' deve ser do tipo inteiro", ctx)
+        if condition_type not in ['int', 'bool']:
+            self.add_error("Condição do 'enquanto' deve ser do tipo inteiro ou booleano", ctx)
         
         self.visit(ctx.comando())
 

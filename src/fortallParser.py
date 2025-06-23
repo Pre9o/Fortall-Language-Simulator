@@ -2149,8 +2149,3 @@ class fortallParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
-
-
-
-

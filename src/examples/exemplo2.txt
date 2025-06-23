@@ -1,0 +1,21 @@
+programa exemplo2;
+
+int numero = 8;
+
+retorna int funcao dobrar(int n) {
+    retorna n * 2;
+}
+
+retorna nada funcao principal() {
+    escreva("Número original:", numero);
+    
+    int resultado = dobrar(numero);
+    escreva("Número dobrado:", resultado);
+    
+    int contador = 1;
+    enquanto (contador <= 3) {
+        int temp = dobrar(contador);
+        escreva("Dobro de", contador, "é", temp);
+        contador = contador + 1;
+    }
+}

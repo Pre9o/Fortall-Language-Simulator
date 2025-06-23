@@ -1,0 +1,55 @@
+programa calculadora;
+
+int a;
+int b;
+
+retorna int funcao somar(int x, int y) {
+    retorna x + y;
+}
+
+retorna int funcao multiplicar(int x, int y) {
+    retorna x * y;
+}
+
+retorna bool funcao ehPar(int numero) {
+    int resto = numero % 2;
+    se (resto == 0) {
+        retorna true;
+    } senao {
+        retorna false;
+    }
+}
+
+retorna nada funcao principal() {
+    escreva("=== CALCULADORA FORTALL ===");
+    escreva("Digite o primeiro número:");
+    leia(a);
+    
+    escreva("Digite o segundo número:");
+    leia(b);
+    
+    escreva("Números escolhidos:", a, "e", b);
+    
+    int soma = somar(a, b);
+    escreva("Soma:", soma);
+    
+    int produto = multiplicar(a, b);
+    escreva("Produto:", produto);
+    
+    bool aEhPar = ehPar(a);
+    bool bEhPar = ehPar(b);
+    
+    se (aEhPar) {
+        escreva(a, "é par");
+    } senao {
+        escreva(a, "é ímpar");
+    }
+    
+    se (bEhPar) {
+        escreva(b, "é par");
+    } senao {
+        escreva(b, "é ímpar");
+    }
+    
+    escreva("Obrigado por usar a calculadora!");
+}

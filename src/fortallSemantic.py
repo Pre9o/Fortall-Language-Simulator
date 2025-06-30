@@ -152,7 +152,6 @@ class SemanticAnalyzer(fortallVisitor):
         self.symbol_table[var_name]['initialized'] = True
     
     def visitComandoSe(self, ctx: fortallParser.ComandoSeContext):
-        """Comando se - condição deve ser do tipo inteiro ou booleano"""
         condition_type = self.visit(ctx.expressao())
         
         if condition_type not in ['int', 'bool']:
@@ -164,7 +163,6 @@ class SemanticAnalyzer(fortallVisitor):
 
     
     def visitComandoEnquanto(self, ctx: fortallParser.ComandoEnquantoContext):
-        """Comando enquanto - condição deve ser do tipo inteiro ou booleano"""
         condition_type = self.visit(ctx.expressao())
         
         if condition_type not in ['int', 'bool']:
@@ -232,8 +230,6 @@ class SemanticAnalyzer(fortallVisitor):
         return func_info['return_type']
     
     def visitExpressaoPrimaria(self, ctx: fortallParser.ExpressaoPrimariaContext):
-        """Visita expressões primárias (números, strings, booleanos, variáveis, etc.)"""
-        
         # Boolean literal - DEVE VIR PRIMEIRO para capturar true e false
         if ctx.BOOLEAN():
             return "bool"
